@@ -3,7 +3,7 @@
     <img width="160" src="/assets/gonebot-logo.png" />
   </a>
   <h1>grepo(<a href="/README.md">English</a>)</h1>
-  <p>🔧 An official simple gonebot plugin manager</p>
+  <p>🔧 官方简易插件管理器</p>
 </div>
 
 ## Grepo
