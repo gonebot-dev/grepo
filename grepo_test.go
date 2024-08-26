@@ -1,19 +1,16 @@
 package grepo
 
 import (
-	"os"
-	"path/filepath"
+	_ "github.com/Kingcxp/gonebot-plugin-test"
 	"testing"
+
+	"github.com/gonebot-dev/gonebot"
 )
 
 func TestMain(m *testing.M) {
-	currentDir, _ := os.Getwd()
-	println(currentDir)
-	filepath.Walk(currentDir, func(path string, info os.FileInfo, errr error) error {
-		if filepath.Dir(path) != currentDir || info.IsDir() {
-			return nil
-		}
-		println(path)
-		return nil
-	})
+	SetEntry("./grepo_test.go")
+
+	Require("test", "v0.0.1")
+
+	gonebot.StartBackend("onebot11")
 }
