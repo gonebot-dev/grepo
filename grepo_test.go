@@ -1,8 +1,9 @@
 package grepo
 
 import (
-	_ "github.com/Kingcxp/gonebot-plugin-test"
 	"testing"
+
+	_ "github.com/Kingcxp/gonebot-plugin-test"
 
 	"github.com/gonebot-dev/gonebot"
 )
@@ -10,7 +11,7 @@ import (
 func TestMain(m *testing.M) {
 	SetEntry("./grepo_test.go")
 
-	Require("test", "v0.0.1")
+	Require("tester", "v0.0.1")
 
 	gonebot.StartBackend("onebot11")
 }
