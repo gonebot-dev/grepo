@@ -3,7 +3,7 @@
     <img width="160" src="/assets/gonebot-logo.png" />
   </a>
   <h1>grepo(<a href="/README.md">English</a>)</h1>
-  <p>🔧 官方简易插件管理器</p>
+  <p>🔧 Gonebot 官方简易插件管理器</p>
 </div>
 
 ## Grepo
@@ -12,7 +12,7 @@
 
 它基于 gonebot 提供的运行时，通过调用一些简单的方法，你可以轻松地从我们的[官方插件仓库](https://github.com/gonebot-dev/gonebot-plugin-repo)安装和更新 gonebot 插件！
 
-## Usage
+## 用法
 
 通过一些简单的步骤，你就可以使用 `grepo` 来加载插件了！
 
@@ -42,7 +42,7 @@ func main() {
 ```
 当你使用 `go run` 命令运行你的项目时，`grepo` 会自动搜索你的入口文件，查找官方仓库中你需要的插件的版本，并尝试安装。安装完成后，你就可以在下次编译和运行项目时使用这些插件了！
 
-## Documentation and Cautions
+## 文档和注意点
 
 - ##### `Require` 方法
   
