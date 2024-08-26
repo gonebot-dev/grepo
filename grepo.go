@@ -123,13 +123,13 @@ func init() {
 	_, err := exec.LookPath("go")
 	if err != nil {
 		log.Println("grepo: [ERROR] Cannot find go! Didn't you installed go?")
-		log.Println("grepo: [INFO] GRepo should skip plugin update.")
+		log.Println("grepo: [INFO] Grepo should skip plugin update.")
 		return
 	}
 	err = exec.Command("go", "fmt").Run()
 	if err != nil {
 		log.Println("grepo: [ERROR] Failed to run go fmt!")
-		log.Println("grepo: [INFO] GRepo should skip plugin update.")
+		log.Println("grepo: [INFO] Grepo should skip plugin update.")
 		return
 	}
 
@@ -143,7 +143,7 @@ func init() {
 		if readErr != nil {
 			return nil
 		}
-		importIndex := bytes.Index(fileContent, []byte("TestMain"))
+		importIndex := bytes.Index(fileContent, []byte("func main()"))
 		if importIndex == -1 {
 			return nil
 		}
@@ -154,6 +154,6 @@ func init() {
 		log.Printf("grepo: [INFO] Entry is %s\n", entry)
 	} else {
 		log.Println("grepo: [ERROR] Cannot find entry file!")
-		log.Println("grepo: [INFO] GRepo should skip plugin update.")
+		log.Println("grepo: [INFO] Grepo should skip plugin update.")
 	}
 }
