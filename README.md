@@ -30,16 +30,20 @@ After running the command below, `grepo` should be installed to your project.
 go get -u github.com/gonebot-dev/grepo
 ```
 
+#### Attention!
+
+Maybe you have noticed that `grepo` requires you to use `go run` to run the project, so if you want to use `go build` to build your project, you should remove `grepo` before that!
+
 ##### 2. `Require` plugins in your main method
 ```go
 func main() {
-  grepo.Require("test", "v0.0.1")
+  grepo.Require("tester", "v0.0.1")
   grepo.Require("echo", "latest")
 
   ...
 }
 ```
-When you run your project by `go run` command, `Grepo` will search for your entry file, find versions of the required plugin in official repository and try to install it. And the installed plugins should be ready for you next time you compile and run the project!
+When you run your project by `go run` command, `Grepo` will search for your entry file, find versions of the required plugin in official repository and try to install it. And the installed plugins should be ready for you next time you run the project!
 
 ## Documentation and Cautions
 
@@ -86,7 +90,7 @@ When you run your project by `go run` command, `Grepo` will search for your entr
 
 ### Why `Require` is so slow?
 
-Every time you run your project, `Require` will reinstall the plugins you required, which leads to the process below:
+Every time you use `go run` run your project, `Require` will reinstall the plugins you required, which leads to the process below:
 
 - Fetch json data from remote repository.
 - Parse json data and find `latest` version (for the module name of the plugin) and your required version (to use in `go get -u`).
