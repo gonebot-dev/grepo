@@ -10,7 +10,7 @@
 
 `grepo` 是一款使用 Go 语言编写的 [gonebot](https://github.com/gonebot-dev/gonebot)插件管理器
 
-它基于 gonebot 提供的运行时，通过调用一些简单的方法，你可以轻松地从我们的[官方插件仓库](https://github.com/gonebot-dev/gonebot-plugin-repo)安装和更新 gonebot 插件！
+它基于 `gonebot` 提供的运行时但不依赖于 gonebot，通过调用一些简单的方法，你可以轻松地从我们的[官方插件仓库](https://github.com/gonebot-dev/gonebot-plugin-repo)安装和更新 gonebot 插件！
 
 ## 用法
 
@@ -30,6 +30,10 @@ import (
 ```sh
 go get -u github.com/gonebot-dev/grepo
 ```
+
+#### 注意！
+
+也许你已经注意到了 `grepo` 需要你使用 `go run` 来运行你的项目，所以如果你想要使用 `go build` 来构建你的项目，你需要在构建之前移除 `grepo`！
 
 ##### 2. 在你的主函数中使用 `Require` 方法
 ```go
@@ -86,7 +90,7 @@ func main() {
 
 ### 为什么 `Require` 这么慢？
 
-每次你运行你的项目，`Require` 都会重新安装你需要的插件，这会导致以下过程：
+每次你使用 `go run` 运行你的项目，`Require` 都会重新安装你需要的插件，这会导致以下过程：
 
 - 从远程仓库获取 json 数据。
 - 解析 json 数据并找到 `latest` 版本（用于插件的模块名称）和你的所需版本（用于 `go get -u`）。

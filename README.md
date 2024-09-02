@@ -10,7 +10,7 @@
 
 `grepo` is a [gonebot](https://github.com/gonebot-dev/gonebot) plugin manager written in Go.
 
-It is based on the runtime provided by gonebot. By calling some simple methods in this module you can easily install and update gonebot plugins from our [official plugin repository](https://github.com/gonebot-dev/gonebot-plugin-repo)!
+It is based on the runtime provided by `gonebot`, but it does not depend on gonebot. By calling some simple methods in this module you can easily install and update gonebot plugins from our [official plugin repository](https://github.com/gonebot-dev/gonebot-plugin-repo)!
 
 ## Usage
 
